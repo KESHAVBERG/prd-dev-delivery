@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testapp/pages/home.dart';
 import 'package:testapp/pages/register.dart';
 
 
@@ -49,19 +50,24 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   SizedBox(height: 5,),
-                  Container(
-                    alignment: Alignment.center,
-                    height: 50,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(40)
+                  GestureDetector(
+                    onTap: ()=>{
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Home(username: 'hotelName',)))
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 50,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(40)
+                      ),
+                      child: Text("Login", style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20
+                      ),),
                     ),
-                    child: Text("Login", style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20
-                    ),),
                   ),
                   SizedBox(height: 5,),
 
